@@ -1,0 +1,22 @@
+{
+  "name": "codaline.frontend",
+  "homepage": "https://github.com/zpawn/codaline.frontend",
+  "authors": [
+    "zpawn <ilia.makarov@me.com>"
+  ],
+  "description": "Codaline. Learn more about Codaline project here: http://codaline.me or https://lnkd.in/eaqdw_p Subscribe us: https://lnkd.in/eaZ6m2t or https://lnkd.in/eaTK3Rs Vote for us on Facebook: https://lnkd.in/eND9TD3",
+  "main": "",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "media/js/vendor/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
