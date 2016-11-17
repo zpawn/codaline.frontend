@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Spring 2013.pdf</title>
+    <style>
+        table {
+            width: 550px;
+            margin: 0 auto;
+            border-width: 0;
+        }
+        a {
+            color: #c71585;
+            text-decoration: none;
+        }
+        pre a {
+            color: #000;
+        }
+        pre a span {
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <tbody>
+	<tr>
+		<td style="padding: 250px 0; text-align: center">
+            <h1>Sample PDF Document</h1>
+            <div>Robert Maron</div>
+            <div>Grzegorz Grudzi ́nski</div>
+            <p>February 20, 1999</p>
+		</td>
+    </tr>
+    <tr>
+        <td>
+            <h1>Contents</h1>
+            <pre>
+<strong><a href="#ch1"><span>1 Template</span></a></strong>                                                        5
+    <a href="#ch11"><span>1.1 How to compile a .tex file to a .pdf file</span> . . . . . . . . 5</a>
+        <a href="#ch111"><span>1.1.1 Tools</span> . . . . . . . . . . . . . . . . . . . . . . . 5</a>
+        <a  href="#ch112"><span>1.1.2 How to use the tools</span>. . . . . . . . . . . . . . . . 5</a>
+    <a  href="#ch12"><span>1.2 How to write a document</span> . . . . . . . . . . . . . . . . . 6</a>
+        <a  href="#ch121"><span>1.2.1 The main document</span> . . . . . . . . . . . . . . . . . 6</a>
+        <a  href="#ch122"><span>1.2.2 Chapters</span>. . . . . . . . . . . . . . . . . . . . . . 6</a>
+        <a  href="#ch123"><span>1.2.3 Spell-checking</span>. . . . . . . . . . . . . . . . . . . 6</a>
+    <a  href="#ch13"><span>1.3 L A TEX and pdfL A TEX capabilities</span> . . . . . . . . . . . 7</a>
+        <a href="#ch131"><span>1.3.1 Overview</span>. . . . . . . . . . . . . . . . . . . . . . 7</a>
+        <a href="#ch132"><span>1.3.2 L<sup>A</sup>T<sub style="font-size: inherit">E</sub>X</span> . . . . . . . . . . . . . . . . . . . . . . . 7</a>
+        <a href="#ch133"><span>1.3.3 pdfL<sup>A</sup>T<sub style="font-size: inherit">E</sub>X</span>. . . . . . . . . . . . . . . . . . . . . . 7</a>
+        <a href="#ch134"><span>1.3.4 Examples</span>. . . . . . . . . . . . . . . . . . . . . . 7</a>
+            </pre>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <h1 id="ch1">Chapter 1</h1>
+            <h2>Template</h2>
+            <h3 id="ch11">1.1 How to compile a .tex file to a .pdf file</h3>
+            <h4 id="ch111">1.1.1 Tools</h4>
+            <p>To process the files you (may) need:</p>
+            <ul>
+                <li>
+                    pdflatex (for example from tetex
+                    package >= 0.9-6, which you can get from <a href="ftp://ftp.mimuw.edu.pl/pub/Mirrors/Linux/redhat-5.2/">Red Hat 5.2</a>);
+                </li>
+                <li>
+                    acroread (a PDF viewer, available from <a href="http://www.adobe.com/">http://www.adobe.com/</a>);
+                </li>
+                <li>
+                    ghostscript >= 5.10 (for example from <a href="ftp://ftp.task.gda.pl/pub/linux/redhat-contrib/">Red Hat Contrib</a>)
+                    and ghostview or gv (from RedHat Linux);
+                </li>
+                <li>
+                    efax package could be useful, if you plan to fax documents.
+                </li>
+            </ul>
+            <h4 id="ch112">1.1.2 How to use the tools</h4>
+            <p>Follow these steps:</p>
+            <ol>
+                <li>
+                    put all source .tex files in one directory, then chdir to the directory (or put
+                    some of them in the L<sup>A</sup>T<sub style="font-size: inherit">E</sub>X search path — if you know how to do this);
+                </li>
+                <li>
+                    run “pdflatex file.tex” on the main file of the document three times
+                    (three — to prepare valid table of contents);
+                </li>
+                <li>
+                    to see or print the result use acroread (unfortunately some versions of
+                    acroread may produce PostScript which is too complex), or
+                </li>
+                <li>
+                    run ghostscript: “gv file.pdf” to display or:
+                    “gs -dNOPAUSE -sDEVICE=pswrite -q -dBATCH -sOutputFile=file.ps file.pdf”
+                    to produce a PostScript file;
+                </li>
+                <li>
+                    run “fax send phone-number file.ps” as root to send a fax, or — if you
+                    know how to do this — modify the fax script to be able to fax .pdf files directly
+                    (you have to insert “|%PDF*” somewhere...).
+                </li>
+            </ol>
+
+            <h3 id="ch12">1.2 How to write a document</h3>
+            <h4 id="ch121">1.2.1 The main document</h4>
+            <p>
+                Choose the name of thedocument, say document. Copy template.tex to
+                document.tex, then edit it, change the title, the authors and set proper in-
+                clude(s) for all the chapters.
+            </p>
+
+            <h4 id="ch122">1.2.2 Chapters</h4>
+            <p>
+                Each chapter should be included in the main document as a separate file. You can
+                choose any name for the file, but we suggest adding a suffix to the name of the
+                main file. For our example we use the file name document_chapter1.tex.
+            </p>
+            <p>First, copy template_chapter.tex to document_chapter1.tex and add the line</p>
+            <p>\include{document_chapter1}</p>
+            <p>
+                in the document.tex, then edit document_chapter1.tex, change the
+                chapter title and edit the body of the chapter appropriately.
+            </p>
+
+            <h3 id="ch123">1.2.3 Spell-checking</h3>
+            <p>Do use a spell-checker, please!</p>
+            <p>
+                You may also want to check grammar, style and so on. Actually you should
+                do it (if you have enough spare time). But you must check spelling!
+            </p>
+            <p>
+                You can use the ispell package for this, from within emacs, or from the
+                command line:
+            </p>
+            <p>ispell -t document_chapter1.tex</p>
+
+            <h3 id="ch13">1.3 L<sup>A</sup>T<sub style="font-size: inherit">E</sub>X and <span class="latex">pdfL<sup>A</sup>T<sub style="font-size: inherit">E</sub>X</span> capabilities</h3>
+            <h4 id="ch131">1.3.1 Overview</h4>
+            <p>
+                First you edit your source .tex file. In L<sup>A</sup>T<sub style="font-size: inherit">E</sub> you compile it using the latex
+                command to a .dvi file (which stands for device-independent). The .dvi file
+                can be converted to any device-dependent format you like using an appropriate
+                driver, for example dvips.
+            </p>
+            <p>
+                When producing .pdf files you should use pdflatex, which produces di-
+                rectly .pdf files out of .tex sources. Note that in the .tex file you may need
+                to use some PDF specific packages.
+            </p>
+            <p>
+                For viewing .tex files use your favourite text editor, for viewing .dvi files
+                under X Window System use xdvi command, .ps files can be viewed with gv
+                (or ghostview) and .pdf files with acroread, gv or xpdf.
+            </p>
+
+            <h4 id="ch132">1.3.2 L<sup>A</sup>T<sub style="font-size: inherit">E</sub>X</h4>
+            <p>A lot of examples can be found in this document.</p>
+            <p>You should also print</p>
+            <ul>
+                <li>doc/latex/general/latex2e.dvi and</li>
+                <li>doc/latex/general/lshort2e.dvi</li>
+            </ul>
+            <p>from your tetex distribution (usually in</p>
+            <ul>
+                <li>/usr/share/texmf or</li>
+                <li>/usr/lib/texmf/texmf).</li>
+            </ul>
+
+            <h4 id="ch133">1.3.3 <span class="latex">pdfLATEX</span></h4>
+            <p>
+                Consult doc/pdftex/manual.pdf from your tetex distribution for more
+                details. Very useful informations can be found in the hyperref and graphics
+                package manuals:
+            </p>
+            <ul>
+                <li>doc/latex/hyperref/manual.pdf and</li>
+                <li>doc/latex/graphics/grfguide.dvi.</li>
+            </ul>
+
+            <h4 id="ch134">1.3.4 Examples</h4>
+            <p><strong>References</strong></p>
+            <p><a href="http://www.mimuw.edu.pl/">MIMUW</a></p>
+            <p><strong>Hyperlinks</strong></p>
+            <p>
+                This is a target.<br/>
+                <a href="#ch134">And this is a link.</a>
+            </p>
+            <p><strong>Dashes, etc.</strong></p>
+            <p>There are three kinds of horizontal dash:</p>
+            <ul>
+                <li>- (use inside words; for example “home-page”, “X-rated”)</li>
+                <li>&ndash; (use this one between numbers; for example “pages 2–22”)</li>
+                <li>&mdash; (use this one as a sentence separator — like here)</li>
+            </ul>
+
+            <p><strong>National characters</strong></p>
+            <ul>
+                <li>&#243;, &#233;, &#237;, . . .</li>
+                <li>&#232;, &#224;, &#236;, . . .</li>
+                <li>&#244;, &#234;, . . .</li>
+                <li>&#245;, &#241;, . . .</li>
+                <li>&#246;, &#235;, . . .</li>
+                <li>&#380;</li>
+                <li>&#261;, &#281;</li>
+                <li>&#322;, &#248;, &#223;</li>
+            </ul>
+            <p>There are other ways to do this, see the documentation for inputenc pack-age.</p>
+
+            <p><strong>Reserved characters</strong></p>
+            <p>
+                Some characters have some special meaning, thus cannot be entered in the usual
+                way.
+            </p>
+            <ul>
+                <li>&#36; &#38; &#37; &#35; &#95; &#123; &#125;</li>
+                <li>&#92;</li>
+                <li><sup>&#126;</sup> <sup>&#94;</sup></li>
+            </ul>
+
+            <p><strong>Math</strong></p>
+            <ul>
+                <li>1<sup>2</sup> , 1<sup>2n</sup>, . . .</li>
+                <li>i<sub>1</sub>, i<sub>2n</sub>, . . .</li>
+                <li>
+                    <div style="display: inline-block">
+                        <small>
+                            <span>1</span><br/>
+                            <span style="border-top: 1px solid #000;">2</span>
+                        </small>
+                    </div>,
+                    <div style="display: inline-block; text-align: center">
+                        <small>
+                            <span>2<i>n</i></span><br/>
+                            <span style="border-top: 1px solid #000;">2 &minus; 3</span>
+                        </small>
+                    </div>
+                </li>
+                <li><i>&alpha;</i>, <i>&beta;</i>, <i>&gamma;</i>, &Omega;, . . .</li>
+                <li>&rarr;, &rArr;, &ge;, &ne;, &#8714;, &#8902;, . . .</li>
+                <li>&radic;<span style="text-decoration: overline">2</span>, . . .</li>
+                <li><span style="text-decoration: overline">(2 + 2)</span>, . . .</li>
+            </ul>
+            <p>For more examples and symbols see chapter 3 of lshort2e.dvi.</p>
+
+            <p><strong>Fonts</strong></p>
+            <ul>
+                <li>Roman</li>
+                <li>Emphasis</li>
+                <li>Medium weight — the default</li>
+                <li>Boldface</li>
+                <li>Upright</li>
+                <li>Slanted</li>
+                <li>Sans serif</li>
+                <li>S MALL CAPS</li>
+                <li>Typewriter</li>
+                <li>
+                    and sizes:
+                    <ul>
+                        <li><span style="font-size: 60%">tiny</span></li>
+                        <li><span style="font-size: 70%">scriptsize</span></li>
+                        <li><span style="font-size: 80%">footnotesize</span></li>
+                        <li><span style="font-size: 90%">small</span></li>
+                        <li>
+                            normalsize
+                            <ul>
+                                <li><span style="font-size: 110%">large</span></li>
+                                <li><span style="font-size: 120%">Large</span></li>
+                                <li><span style="font-size: 130%">LARGE</span></li>
+                                <li><span style="font-size: 140%">huge</span></li>
+                                <li><span style="font-size: 150%">Huge</span></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </td>
+    </tr>
+    </tbody>
+</table>
+	
+</body>
+</html>
