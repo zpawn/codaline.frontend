@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Forms</title>
+    <style>
+        fieldset {
+            border-width: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+
+<form action="">
+
+    <h3>Личные данные</h3>
+    <input type="text" name="firstname" placeholder="Имя"/>
+    <input type="text" name="lastname" placeholder="Фамилия"/>
+    <input type="text" name="secondname" placeholder="Отчкство"/>
+
+    <p>Дата рождения:</p>
+    <input type="date" name="date"/>
+
+    <fieldset>
+        <p>Пол:</p>
+        <ul type="none" style="padding-left: 0">
+            <li>
+                <input type="radio" name="sex" value="m"/>
+                М
+            </li>
+            <li>
+                <input type="radio" name="sex" value="w"/>
+                Ж
+            </li>
+        </ul>
+    </fieldset>
+
+    <h3>Образование</h3>
+    <table>
+        <tr>
+            <td>Учебное заведение:</td>
+            <td><input type="text" name="education[university]"/></td>
+        </tr>
+        <tr>
+            <td>Специальность:</td>
+            <td><input type="text" name="education[speciality]"/></td>
+        </tr>
+        <tr>
+            <td>Уровень подготовки:</td>
+            <td>
+                <select name="education[degree]">
+                    <option value="0">Не достигнут</option>
+                    <option value="1">Бакалавр</option>
+                    <option value="2">Специалист</option>
+                    <option value="2">Магистр</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Год окончания:</td>
+            <td><input type="text" name="education[year]"/></td>
+        </tr>
+    </table>
+
+    <h3>Опыт работы</h3>
+
+        <label>
+            <input type="checkbox" name="experience[]" value="no">
+            Опыт работы отсутствует
+        </label>
+
+        <label>
+            <input type="checkbox" name="experience[]" value="it">
+            Есть опыт работы в IT
+        </label>
+
+        <label>
+            <input type="checkbox" name="experience[]" value="other">
+            Есть опыт работы в других сферах
+        </label>
+
+</form>
+
+</body>
+</html>
