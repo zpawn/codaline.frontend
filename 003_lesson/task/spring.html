@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+    <link rel="stylesheet" href="css/spring.css"/>
+	<title>Spring 2013.pdf</title>
+</head>
+<body>
+
+<div class="wrapper">
+
+    <header>
+        <h1>Sample PDF Document</h1>
+        <div>Robert Maron</div>
+        <div>Grzegorz Grudzi ́nski</div>
+        <p>February 20, 1999</p>
+    </header>
+
+    <nav>
+        <h1>Contents</h1>
+        <ul>
+            <li>
+                <a href="#ch1">
+                    <span>1 Template</span>
+                    <span>5</span>
+                </a>
+            </li>
+            <li>
+                <ul>
+                    <li>
+                        <a href="#ch11">
+                            <span>1.1 How to compile a <span class="text-mono">.tex</span> file to a <span class="text-mono">.pdf</span> file</span>
+                            <span>5</span>
+                        </a>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#ch111">
+                                    <span>1.1.1 Tools</span>
+                                    <span>5</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#ch112">
+                                    <span>1.1.2 How to use the tools</span>
+                                    <span>5</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#ch12">
+                            <span>1.2 How to write a document</span>
+                            <span>6</span>
+                        </a>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#ch121">
+                                    <span>1.2.1 The main document</span>
+                                    <span>6</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#ch122">
+                                    <span>1.2.2 Chapters</span>
+                                    <span>6</span>
+                                </a>
+                            </li>
+                            <li><a href="#ch123">
+                                <span>1.2.3 Spell-checking</span>
+                                <span>6</span>
+                            </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a  href="#ch13">
+                            <span>1.3 <span class="text-latex">l<span>a</span>t<span>e</span>x</span> and pdf<span class="text-latex">l<span>a</span>t<span>e</span>x</span> capabilities</span>
+                            <span>7</span>
+                        </a>
+                    </li>
+                    <li>
+                        <ul>
+                            <li>
+                                <a href="#ch131">
+                                    <span>1.3.1 Overview</span>
+                                    <span>7</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#ch132">
+                                    <span>1.3.2 <span class="text-latex">l<span>a</span>t<span>e</span>x</span></span>
+                                        <span>7</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#ch133">
+                                    <span>1.3.3 pdf<span class="text-latex">l<span>a</span>t<span>e</span>x</span></span>
+                                    <span>7</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#ch134">
+                                    <span>1.3.4 Examples</span>
+                                    <span>7</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section>
+        <h1 id="ch1">Chapter 1</h1>
+        <h2>Template</h2>
+        <h3 id="ch11">1.1 How to compile a <span class="text-mono">.tex</span> file to a <span>.pdf</span> file</h3>
+        <h4 id="ch111">1.1.1 Tools</h4>
+        <p>To process the files you (may) need:</p>
+        <ul>
+            <li>
+                <span class="text-mono">pdflatex</span> (for example from <span class="text-mono">tetex</span>
+                package <span class="text-mono">>= 0.9-6</span>, which you can get from <a href="ftp://ftp.mimuw.edu.pl/pub/Mirrors/Linux/redhat-5.2/">Red Hat 5.2</a>);
+            </li>
+            <li>
+                <span class="text-mono">acroread</span> (a PDF viewer, available from <a href="http://www.adobe.com/">http://www.adobe.com/</a>);
+            </li>
+            <li>
+                <span class="text-mono">ghostscript >= 5.10</span> (for example from <a href="ftp://ftp.task.gda.pl/pub/linux/redhat-contrib/">Red Hat Contrib</a>)
+                and <span class="text-mono">ghostview</span> or <span class="text-mono">gv</span> (from RedHat Linux);
+            </li>
+            <li>
+                <span class="text-mono">efax</span> package could be useful, if you plan to fax documents.
+            </li>
+        </ul>
+        <h4 id="ch112">1.1.2 How to use the tools</h4>
+        <p>Follow these steps:</p>
+        <ol>
+            <li>
+                put all source <span class="text-mono">.tex</span> files in one directory, then chdir to the directory (or put
+                some of them in the <span class="text-latex">l<span>a</span>t<span>e</span>x</span> search path — if you know how to do this);
+            </li>
+            <li>
+                run “<span class="text-mono">pdflatex file.tex</span>” on the main file of the document three times
+                (three — to prepare valid table of contents);
+            </li>
+            <li>
+                to see or print the result use <span class="text-mono">acroread</span> (unfortunately some versions of
+                <span class="text-mono">acroread</span> may produce PostScript which is too complex), or
+            </li>
+            <li>
+                run <span class="text-mono">ghostscript</span>: “<span class="text-mono">gv file.pdf</span>” to display or:
+                “gs -dNOPAUSE -sDEVICE=pswrite -q -dBATCH -sOutputFile=file.ps file.pdf”
+                to produce a PostScript file;
+            </li>
+            <li>
+                run “<span class="text-mono">fax send phone-number file.ps</span>” as root to send a fax, or — if you
+                know how to do this — modify the <span>fax</span> script to be able to fax <span class="text-mono">.pdf</span> files directly
+                (you have to insert “<span>|%PDF*</span>” somewhere...).
+            </li>
+        </ol>
+
+        <h3 id="ch12">1.2 How to write a document</h3>
+        <h4 id="ch121">1.2.1 The main document</h4>
+        <p>
+            Choose the name of thedocument, say <span class="text-mono">document</span>. Copy <span class="text-mono">template.tex</span> to
+            <span class="text-mono">document.tex</span>, then edit it, change the title, the authors and set proper in-
+            clude(s) for all the chapters.
+        </p>
+
+        <h4 id="ch122">1.2.2 Chapters</h4>
+        <p>
+            Each chapter should be included in the main document as a separate file. You can
+            choose any name for the file, but we suggest adding a suffix to the name of the
+            main file. For our example we use the file name <span class="text-mono">document_chapter1.tex</span>.
+        </p>
+        <p>First, copy <span class="text-mono">template_chapter.tex</span> to <span class="text-mono">document_chapter1.tex</span> and add the line</p>
+        <p class="text-mono">\include{document_chapter1}</p>
+        <p>
+            in the <span class="text-mono">document.tex</span>, then edit <span class="text-mono">document_chapter1.tex</span>, change the
+            chapter title and edit the body of the chapter appropriately.
+        </p>
+
+        <h3 id="ch123">1.2.3 Spell-checking</h3>
+        <p><i>Do</i> use a spell-checker, please!</p>
+        <p>
+            You may also want to check grammar, style and so on. Actually you should
+            do it (if you have enough spare time). But you <i>must</i> check spelling!
+        </p>
+        <p>
+            You can use the <span class="text-mono">ispell</span> package for this, from within emacs, or from the
+            command line:
+        </p>
+        <p class="text-mono">ispell -t document_chapter1.tex</p>
+
+        <h3 id="ch13">
+            1.3 <span class="text-latex">l<span>a</span>t<span>e</span>x</span>
+            and <span class="text-latex">l<span>a</span>t<span>e</span>x</span> capabilities
+        </h3>
+        <h4 id="ch131">1.3.1 Overview</h4>
+        <p>
+            First you edit your source <span class="text-mono">.tex</span> file. In <span class="text-latex">l<span>a</span>t<span>e</span>x</span>
+            you compile it using the <span class="text-mono">latex</span>
+            command to a <span class="text-mono">.dvi</span> file (which stands for device-independent). The <span class="text-mono">.dvi</span> file
+            can be converted to any device-dependent format you like using an appropriate
+            driver, for example <span class="text-mono">dvips</span>.
+        </p>
+        <p>
+            When producing <span class="text-mono">.pdf</span> files you should use <span class="text-mono">pdflatex</span>, which produces di-
+            rectly <span class="text-mono">.pdf</span> files out of <span class="text-mono">.tex</span> sources. Note that in the <span class="text-mono">.tex</span> file you may need
+            to use some PDF specific packages.
+        </p>
+        <p>
+            For viewing <span class="text-mono">.tex</span> files use your favourite text editor, for viewing <span class="text-mono">.dvi</span> files
+            under X Window System use <span class="text-mono">xdvi</span> command, <span class="text-mono">.ps</span> files can be viewed with <span class="text-mono">gv</span>
+            (or ghostview) and <span class="text-mono">.pdf</span> files with <span class="text-mono">acroread</span>,
+            <span class="text-mono">gv</span> or <span class="text-mono">xpdf</span>.
+        </p>
+
+        <h4 id="ch132">1.3.2 <span class="text-latex">l<span>a</span>t<span>e</span>x</span></h4>
+        <p>A lot of examples can be found in this document.</p>
+        <p>You should also print</p>
+        <ul>
+            <li><span class="text-mono">doc/latex/general/latex2e.dvi and</span></li>
+            <li><span class="text-mono">doc/latex/general/lshort2e.dvi</span></li>
+        </ul>
+        <p>from your <span class="text-mono">tetex</span> distribution (usually in</p>
+        <ul>
+            <li><span class="text-mono">/usr/share/texmf</span> or</li>
+            <li><span class="text-mono">/usr/lib/texmf/texmf</span>).</li>
+        </ul>
+
+        <h4 id="ch133">1.3.3 pdf<span class="text-latex">l<span>a</span>t<span>e</span>x</span></h4>
+        <p>
+            Consult <span class="text-mono">doc/pdftex/manual.pdf</span> from your <span class="text-mono">tetex</span> distribution for more
+            details. Very useful informations can be found in the <span class="text-mono">hyperref</span> and <span class="text-mono">graphics</span>
+            package manuals:
+        </p>
+        <ul>
+            <li><span class="text-mono">doc/latex/hyperref/manual.pdf</span> and</li>
+            <li><span class="text-mono">doc/latex/graphics/grfguide.dvi</span>.</li>
+        </ul>
+
+        <h4 id="ch134">1.3.4 Examples</h4>
+        <p><strong>References</strong></p>
+        <p><a href="http://www.mimuw.edu.pl/">MIMUW</a></p>
+        <p><strong>Hyperlinks</strong></p>
+        <p>
+            This is a target.<br/>
+            <a href="#ch134">And this is a link.</a>
+        </p>
+        <p><strong>Dashes, etc.</strong></p>
+        <p>There are three kinds of horizontal dash:</p>
+        <ul>
+            <li>- (use inside words; for example “home-page”, “X-rated”)</li>
+            <li>&ndash; (use this one between numbers; for example “pages 2–22”)</li>
+            <li>&mdash; (use this one as a sentence separator — like here)</li>
+        </ul>
+
+        <p><strong>National characters</strong></p>
+        <ul>
+            <li>&#243;, &#233;, &#237;, . . .</li>
+            <li>&#232;, &#224;, &#236;, . . .</li>
+            <li>&#244;, &#234;, . . .</li>
+            <li>&#245;, &#241;, . . .</li>
+            <li>&#246;, &#235;, . . .</li>
+            <li>&#380;</li>
+            <li>&#261;, &#281;</li>
+            <li>&#322;, &#248;, &#223;</li>
+        </ul>
+        <p>There are other ways to do this, see the documentation for <span class="text-mono">inputenc</span> pack-age.</p>
+
+        <p><strong>Reserved characters</strong></p>
+        <p>
+            Some characters have some special meaning, thus cannot be entered in the usual
+            way.
+        </p>
+        <ul>
+            <li>&#36; &#38; &#37; &#35; &#95; &#123; &#125;</li>
+            <li>&#92;</li>
+            <li><sup>&#126;</sup> <sup>&#94;</sup></li>
+        </ul>
+
+        <p><strong>Math</strong></p>
+        <ul>
+            <li>1<sup>2</sup> , 1<sup>2n</sup>, . . .</li>
+            <li>i<sub>1</sub>, i<sub>2n</sub>, . . .</li>
+            <li>1/2, 2<i>n</i>/2-3</li>
+            <li><i>&alpha;</i>, <i>&beta;</i>, <i>&gamma;</i>, &Omega;, . . .</li>
+            <li>&rarr;, &rArr;, &ge;, &ne;, &#8714;, &#8902;, . . .</li>
+            <li>&radic;<span class="text-sqr">2</span>, . . .</li>
+            <li><span class="text-sqr">(2 + 2)</span>, . . .</li>
+        </ul>
+        <p>For more examples and symbols see chapter 3 of lshort2e.dvi.</p>
+
+        <p><strong>Fonts</strong></p>
+        <ul>
+            <li>Roman</li>
+            <li>Emphasis</li>
+            <li>Medium weight — the default</li>
+            <li>Boldface</li>
+            <li>Upright</li>
+            <li>Slanted</li>
+            <li>Sans serif</li>
+            <li>S MALL CAPS</li>
+            <li>Typewriter</li>
+            <li>
+                and sizes:
+                <ul class="text-small">
+                    <li><span>tiny</span></li>
+                    <li><span>scriptsize</span></li>
+                    <li><span>footnotesize</span></li>
+                    <li><span>small</span></li>
+                    <li>
+                        normalsize
+                        <ul class="text-large">
+                            <li><span>large</span></li>
+                            <li><span>Large</span></li>
+                            <li><span>LARGE</span></li>
+                            <li><span>huge</span></li>
+                            <li><span>Huge</span></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+.wrapper {
+    max-width: 560px;
+    margin: 0 auto;
+}
+
+/* CSS-counter */
+.wrapper {
+    counter-reset: chapter;
+}
+
+a {
+    color: #c71585;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    padding: 250px 0;
+    text-align: center
+}
+
+    nav ul { list-style-type: none; }
+    nav > ul { padding-left: 0 }
+    nav ul li { position: relative }
+    nav a {
+        color: #000;
+        background-color: #fff;
+    }
+    nav a:hover {
+        text-decoration: none;
+    }
+
+    nav a > span:first-child {
+        color: #f00;
+    }
+
+    nav a > span:last-child {
+        float: right;
+    }
+
+/* Latex test */
+.text-latex {
+    text-transform: uppercase;
+    position: relative;
+}
+
+.text-latex > span:nth-child(1) {
+    font-size: 10px;
+    position: absolute;
+    left: 0.5em;
+}
+.text-latex > span:nth-child(2) {
+    vertical-align: sub;
+}
+
+.text-mono {
+    font-family: monospace;
+}
+
+.text-sqr {
+    text-decoration: overline;
+}
+
+ul.text-small > li:nth-child(1) span { font-size: .5em }
+ul.text-small > li:nth-child(2) span { font-size: .6em }
+ul.text-small > li:nth-child(3) span { font-size: .7em }
+ul.text-small > li:nth-child(4) span { font-size: .8em }
+
+ul.text-large > li:nth-child(1) span { font-size: 1.2em }
+ul.text-large > li:nth-child(2) span { font-size: 1.3em }
+ul.text-large > li:nth-child(3) span { font-size: 1.4em }
+ul.text-large > li:nth-child(4) span { font-size: 1.5em }
+ul.text-large > li:nth-child(5) span { font-size: 1.6em }

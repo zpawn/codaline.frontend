@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Portfolio</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css"/>
+
+    <!-- Custom styles -->
+    <link href="css/app.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+
+<!-- Fixed navbar -->
+<nav class="navbar navbar-primary navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="glyphicon glyphicon-option-vertical fa-lg"></span>
+            </button>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#education">Образование</a></li>
+                <li><a href="#work">Опыт работы</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contacts">Контакты <span class="sr-only">(current)</span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="ribbon"></div>
+
+<section class="container top-block">
+    <div class="col-xs-12">
+        <img class="photo" src="images/peace-man.png" alt=""/>
+    </div>
+    <div class="col-xs-12 box-shadow">
+        <h2>Привет, меня зовут Илья Макаров и я начинающий frontend-разработчик.</h2>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur cumque delectus distinctio dolore doloribus enim explicabo illum inventore minus, nisi numquam perspiciatis quam quis soluta tempora veniam voluptas, voluptatibus.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur cumque delectus distinctio dolore doloribus enim explicabo illum inventore minus, nisi numquam perspiciatis quam quis soluta tempora veniam voluptas, voluptatibus.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur cumque delectus distinctio dolore doloribus enim explicabo illum inventore minus, nisi numquam perspiciatis quam quis soluta tempora veniam voluptas, voluptatibus.
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consectetur cumque delectus distinctio dolore doloribus enim explicabo illum inventore minus, nisi numquam perspiciatis quam quis soluta tempora veniam voluptas, voluptatibus.
+        </p>
+    </div>
+</section>
+
+<section class="container">
+    <div class="col-xs-12 box-shadow card">
+        <a name="education"></a>
+        <div class="card-title">
+            <img src="images/edu.jpeg" alt=""/>
+            <h4>Образование</h4>
+        </div>
+        <div class="col-xs-12">
+            <p><strong>Украинская государственная академия железнодорожного транспорта.</strong></p>
+            <p>Автоматика и компьютерное телеуправление движения поездов.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="col-xs-12 box-shadow card">
+        <a name="work"></a>
+        <div class="card-title">
+            <img src="images/work.jpg" alt=""/>
+            <h4>Опыт работы</h4>
+        </div>
+        <div class="col-xs-12">
+            <p><strong>FF.ua</strong></p>
+            <p>Web-мастер.</p>
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="col-xs-12 box-shadow card">
+        <a name="skills"></a>
+        <div class="card-title">
+            <img src="images/skills.jpg" alt=""/>
+            <h4>Skills</h4>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="chart" data-percent="70">
+                <span class="percent">70</span>
+            </div>
+            <p class="text-center">PHP</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="chart" data-percent="50">
+                <span class="percent">50</span>
+            </div>
+            <p class="text-center">HTML/CSS</p>
+        </div>
+
+        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="chart" data-percent="30">
+                <span class="percent">30</span>
+            </div>
+            <p class="text-center">JavaScript</p>
+        </div>
+    </div>
+</section>
+
+<section class="full-screen">
+    <div class="container">
+        <div class="col-xs-12 col-md-5">
+            <a name="contacts"></a>
+
+            <form action="">
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-user"></span></div>
+                        <input type="text" class="form-control" id="contact-email" placeholder="Name">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></div>
+                        <input type="text" class="form-control" id="contact-email" placeholder="Name">
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-primary">Primary</button>
+            </form>
+        </div>
+        <div class="col-xs-12 col-xs-offset-0 col-md-6 col-md-offset-1">
+
+            <ul class="fa-ul list-padding">
+                <li>
+                    <a class="text-secondary" href="https://ua.linkedin.com/in/ilia-makarov-88b76aa4">
+                        <i class="fa-li fa fa-linkedin fa-2x"></i>
+                        <span class="h5">https://ua.linkedin.com/in/ilia-makarov</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-secondary" href="https://github.com/zpawn">
+                        <i class="fa-li fa fa-github fa-2x"></i>
+                        <span class="h5">https://github.com/zpawn</span>
+                    </a>
+                </li>
+                <li>
+                    <a class="text-secondary" href="mailto:ilia.makarov@me.com">
+                        <span class="glyphicon glyphicon-envelope fa-li fa-2x"></span>
+                        <span class="h5">ilia.makarov@me.com</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="full-screen">
+    <div class="container">
+        <div class="col-xs-12">
+            <span class="glyphicon glyphicon-copyright-mark"></span>
+            2016 Ilia Makarov &
+            <a class="text-secondary" href="http://codaline.me/">codaline.me</a>
+        </div>
+    </div>
+</footer>
+
+<!-- Dependencies -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery.easypiechart.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
