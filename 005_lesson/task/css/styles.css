@@ -6,7 +6,7 @@ border:  #c1d3d2;
 */
 
 /*** Common styles ***/
-body * {
+body {
     font-family: sans-serif;
     color: #83a7a5;
     margin: 0;
@@ -42,17 +42,32 @@ body * {
     padding-left: 0;
 }
 
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input:-ms-input-placeholder,
-input:-moz-placeholder,
-
-textarea::-webkit-input-placeholder,
-textarea::-moz-placeholder,
-textarea:-ms-input-placeholder,
-textarea:-moz-placeholder {
+input::-webkit-input-placeholder {
+    color: #83a7a5;
+}
+input::-moz-placeholder {
     color: #83a7a5;
     opacity: 1;
+}
+input:-ms-input-placeholder {
+    color: #83a7a5;
+}
+input:-moz-placeholder {
+    color: #83a7a5;
+}
+
+textarea::-webkit-input-placeholder {
+    color: #83a7a5;
+}
+textarea::-moz-placeholder {
+    color: #83a7a5;
+    opacity: 1;
+}
+textarea:-ms-input-placeholder {
+    color: #83a7a5;
+}
+textarea:-moz-placeholder {
+    color: #83a7a5;
 }
 
 /*** description ***/
