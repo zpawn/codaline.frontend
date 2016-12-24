@@ -1,0 +1,403 @@
+/*
+primary:    #0ebfdd;
+text:       #45494d;
+gray:       #82868f;
+
+screen-xs:  320px;
+screen-sm:  480px;
+screen-md:  786px;
+screen-lg:  992px;
+
+*/
+
+/*** Fonts ***/
+@font-face {
+    font-family: 'Raleway';
+    src: url('./../fonts/raleway-regular.eot');
+    src: url('./../fonts/raleway-regular.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/raleway-regular.woff2') format('woff2'),
+    url('./../fonts/raleway-regular.woff') format('woff'),
+    url('./../fonts/raleway-regular.svg#ralewayregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'raleway';
+    src: url('./../fonts/raleway-italic.eot');
+    src: url('./../fonts/raleway-italic.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/raleway-italic.woff2') format('woff2'),
+    url('./../fonts/raleway-italic.woff') format('woff'),
+    url('./../fonts/raleway-italic.svg#ralewayitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Raleway';
+    src: url('./../fonts/raleway-bold.eot');
+    src: url('./../fonts/raleway-bold.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/raleway-bold.woff2') format('woff2'),
+    url('./../fonts/raleway-bold.woff') format('woff'),
+    url('./../fonts/raleway-bold.svg#ralewaybold') format('svg');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+/*** Sprites ***/
+[class^='icon-'] {
+    background-image: url('./../images/sprites.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.icon-fb {
+    width: 7px;
+    height: 16px;
+    background-position: 0 0;
+}
+
+.icon-mail {
+    width: 16px;
+    height: 11px;
+    background-position: -7px 0;
+}
+
+.icon-pin-cyan {
+    width: 28px;
+    height: 36px;
+    background-position: -23px 0;
+}
+
+.icon-pin-green {
+    width: 28px;
+    height: 36px;
+    background-position: -51px 0;
+}
+
+.icon-stars {
+    width: 12px;
+    height: 12px;
+    background-position: 0 -36px;
+}
+
+.icon-twitter {
+    width: 18px;
+    height: 14px;
+    background-position: -12px -36px;
+}
+
+body {
+    font-family: Raleway, Geneva, Tahoma, Verdana, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    color: #45494d;
+}
+
+p {
+    line-height: 1.6em;
+}
+
+h2 {
+    font-size: 43px;
+}
+
+i {
+    font-style: italic;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.wrapper {
+    max-width: 940px;
+    margin: 0 auto;
+}
+
+.links {
+    list-style: none;
+}
+
+.links li {
+    display: inline-block;
+}
+
+/*** Header ***/
+.header {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #82868f;
+}
+
+    .header .brand-logo {
+        font-size: 30px;
+    }
+
+    .header .navbar {
+        margin: 20px 0;
+    }
+
+        .navbar .links {
+            float: right;
+            font-size: 14px;
+        }
+
+        .navbar .links a {
+            color: #82868f;
+        }
+
+        @media (max-width: 520px) {
+            .navbar .links {
+                float: none;
+            }
+        }
+
+        .navbar:after {
+            display: block;
+            content: '';
+            clear: both;
+        }
+
+        .navbar .links li {
+            padding: 12px 0;
+        }
+
+        .navbar .links li:not(:last-child) {
+            margin-right: 25px;
+        }
+
+        .navbar .links .active {
+            /*padding: 12px 18px;*/
+            color: #fff;
+            background-color: #0ebfdd;
+            border-radius: 20px;
+            padding-left: 38px;
+            padding-right: 38px;
+        }
+
+/*** Intro ***/
+.intro-fullscreen {
+    color: #fff;
+    text-align: center;
+    padding: 0 70px;
+
+    min-height: 600px;
+    background-color: #686962;
+    background-image: url('./../images/mountains.jpg');
+    background-repeat: no-repeat;
+    background-position: top center;
+
+}
+
+    .intro-fullscreen .title {
+        padding-top: 400px;
+        padding-bottom: 30px;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    .intro-fullscreen .title:before,
+    .intro-fullscreen .title:after {
+        display: inline-block;
+        content: '';
+        margin: 0 15px 5px;
+        /* sprite: icon-stars */
+        background-image: url('./../images/sprites.png');
+        background-repeat: no-repeat;
+        width: 12px;
+        height: 12px;
+        background-position: 0 -36px;
+    }
+
+
+@media (min-width: 480px) and (max-width: 768px) {
+    .intro-fullscreen {
+        min-height: 350px;
+        padding: 0 35px;
+    }
+
+    .intro-fullscreen .title {
+        padding-top: 150px;
+    }
+}
+
+@media (max-width: 479px) {
+    .intro-fullscreen {
+        padding: 0 10px;
+    }
+
+    .intro-fullscreen .title:before{
+        margin-left: 0;
+        margin-right: 5px;
+    }
+
+    .intro-fullscreen .title:after {
+        margin-left: 5px;
+        margin-right: 0;
+    }
+}
+
+.bio {
+    text-align: center;
+    padding: 70px;
+}
+
+    .bio .title {
+        color: #0ebfdd;
+        padding-bottom: 30px;
+    }
+
+@media (max-width: 768px) {
+    .bio {
+        padding: 35px;
+    }
+}
+
+.team {
+    color: #fff;
+    background-color: #0ebfdd;
+    text-align: center;
+    padding: 70px 0 60px;
+}
+
+    .team .team-row figure {
+        display: inline-block;
+        padding: 0 35px;
+        margin: 100px 0;
+    }
+
+        .team-row figure img {
+            border-radius: 160px;
+            max-width: 160px;
+            height: auto;
+        }
+
+        .team-row figcaption {
+            margin-top: 10px;
+        }
+
+    .team .button {
+        display: inline-block;
+        text-transform: uppercase;
+        padding: 10px 35px;
+        border: 1px solid #fff;
+        border-radius: 20px;
+        color: #fff;
+        text-decoration: none;
+        
+        -webkit-transition: ease .5s;
+           -moz-transition: ease .5s;
+            -ms-transition: ease .5s;
+             -o-transition: ease .5s;
+                transition: ease .5s;
+    }
+
+    .team .button:hover {
+        background-color: #fff;
+        color: #0ebfdd;
+    }
+
+.map {
+    width: 100%;
+    height: 500px;
+}
+
+@media (max-width: 319px) {
+    .map {
+        height: 200px;
+    }
+}
+
+@media (min-width: 320px) and (max-width: 479px) {
+    .map {
+        height: 300px;
+    }
+}
+
+@media (min-width: 480px) and (max-width: 767px) {
+    .map {
+        height: 400px;
+    }
+}
+
+.footer {
+    color: #fff;
+    background-color: #45494d;
+    font-size: 13px;
+}
+
+.social-info-links:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+    .footer .info-links {
+        float: left;
+        text-transform: uppercase;
+        margin: 33px 0;
+    }
+
+        .footer .info-links .item {
+            color: #fff;
+            margin-right: 35px;
+        }
+
+        .footer .info-links a {
+            color: #fff;
+        }
+
+    .footer .social {
+        float: right;
+        margin: 20px 0;
+        display: flex;
+    }
+
+        .footer .social .social-item {
+            height: 38px;
+            width: 38px;
+            border: 1px solid #fff;
+            border-radius: 19px;
+            margin-left: 10px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    .footer .copyright {
+        border-top: 1px solid #82868f;
+    }
+
+    .footer .copyright:after {
+        display: block;
+        content: '';
+        clear: both;
+    }
+
+        .footer .copyright .links {
+            float: right;
+            margin: 10px 0;
+        }
+
+            .footer .copyright .links .item {
+                padding: 0 10px;
+            }
+
+            .footer .copyright .links .item:not(:last-child) {
+                border-right: 1px solid #82868f;
+            }
+
+            .footer .copyright .links .item:last-child {
+                padding-right: 0;
+            }
+
+            .footer .copyright .links a {
+                color: #82868f;
+            }

@@ -1,0 +1,327 @@
+/*
+fonts:  Tahoma, Verdana, Segoe, sans-serif;
+        Oswald, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+
+screen-xs:  480px;
+screen-sm:  768px;
+screen-md:  992px;
+screen-lg:  1200px;
+
+bg-color:           #c8cfdc;
+product-bg:         #383d68;
+
+text-color:     #8f8f8f;
+attention:      #fc7070;
+gray:           #333333;
+blue:           #0089cf;
+green:          #83d78c;
+*/
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('./../fonts/oswald-regular.eot');
+    src: url('./../fonts/oswald-regular.eot?#iefix') format('embedded-opentype'),
+    url('./../fonts/oswald-regular.woff2') format('woff2'),
+    url('./../fonts/oswald-regular.woff') format('woff'),
+    url('./../fonts/oswald-regular.svg#oswaldregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    background-color: #c8cfdc;
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    color: #8f8f8f;
+    font-size: 12px;
+    line-height: 1.5em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Oswald, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+    color: #333333;
+}
+
+/*** Sprites ***/
+[class^='icon-'] {
+    background-image: url('./../images/sprites.png');
+    background-repeat: no-repeat;
+    display: inline-block;
+}
+
+.icon-arrow {
+    width: 7px;
+    height: 10px;
+    background-position: 0 0;
+}
+
+.icon-basket {
+    width: 16px;
+    height: 14px;
+    background-position: -7px 0;
+}
+
+.icon-heart {
+    width: 16px;
+    height: 14px;
+    background-position: -23px 0;
+}
+
+/*** Grid ***/
+.row {
+    box-sizing: border-box;
+}
+
+.row:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+[class^='col-'] {
+    float: left;
+    box-sizing: border-box;
+}
+
+.col-lg-4-5 {
+    width: 80%;
+}
+
+.col-lg-1-5 {
+    width: 20%;
+}
+
+.col-lg-1-2 {
+    width: 50%;
+}
+
+.col-lg-1-4 {
+    width: 25%;
+}
+
+.responsive-image {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.wrapper {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.title, .price {
+    font-family: Oswald, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+    text-transform: uppercase;
+    color: #333333;
+    font-size: 16px;
+}
+
+.title.h1 {
+    font-size: 4em;
+}
+
+.description {
+    font-family: Tahoma, Verdana, Segoe, sans-serif;
+    font-size: 14px;
+}
+
+.simple-product {
+    margin: 10px;
+    padding: 10px;
+    background-color: #fff;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+    .simple-product:hover .icon-heart,
+    .simple-product:hover .icon-basket {
+        display: block;
+    }
+
+    .simple-product.primary {
+        background-color: #383d68;
+    }
+
+        .simple-product .responsive-image {
+            margin-bottom: 30px;
+        }
+
+        .simple-product.primary .title,
+        .simple-product.primary .description,
+        .simple-product.primary .price {
+            color: #fff;
+        }
+
+        .simple-product .title {
+            margin-bottom: 15px;
+        }
+
+        .simple-product .description {
+            margin-bottom: 20px;
+        }
+
+        .simple-product .price {
+            margin-bottom: 20px;
+        }
+
+        .simple-product .old-price {
+            text-decoration: line-through;
+            color: #fc7070;
+        }
+
+        .simple-product.scale {
+            padding: 0;
+        }
+
+            .simple-product.scale  .image {
+                overflow: hidden;
+            }
+
+                .simple-product.scale .image .responsive-image {
+                    position: relative;
+                    bottom: -70px;
+
+                    -webkit-transform: scale(1.2);
+                    -moz-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    -o-transform: scale(1.2);
+                    transform: scale(1.4);
+                }
+
+.product-icon-block {
+    position: absolute;
+    top: 30px;
+    left: 0;
+    right: 0;
+}
+
+    .product-icon-block .badge {
+        font-family: Oswald, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+        text-transform: uppercase;
+    }
+
+    .product-icon-block [class^='icon-'] {
+        display: none;
+        -webkit-transition: ease .5s;
+        -moz-transition: ease .5s;
+        -ms-transition: ease .5s;
+        -o-transition: ease .5s;
+        transition: ease .5s;
+    }
+
+    .product-icon-block .left {
+        float: left;
+        margin-left: 20px;
+    }
+
+    .product-icon-block .right {
+        float: right;
+        margin-right: 20px;
+    }
+
+.double-product {
+    margin: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    height: 400px;
+}
+
+    .double-product .title {
+        margin-bottom: 15px;
+    }
+
+    .double-product .description {
+        margin-bottom: 20px;
+    }
+
+    .double-product .price {
+        margin: 20px 0;
+    }
+
+    .double-product .middle-content {
+        height: 400px;
+        display: flex;
+        align-items: center;
+        position: relative;
+    }
+
+    .double-product .responsive-image {
+        width: auto;
+        max-height: 400px;
+    }
+
+    .double-product.scale .image {
+        height: 60%;
+        overflow: hidden;
+    }
+
+    .double-product .image .responsive-image {
+        position: relative;
+        top: -30px;
+        right: -30px;
+
+        -webkit-transform: scale(1.2);
+           -moz-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+             -o-transform: scale(1.2);
+                transform: scale(1.2);
+    }
+
+    .double-product.scale .item {
+        text-align: center;
+    }
+
+        .double-product.scale .title {
+            margin-top: 30px;
+        }
+
+.brand .simple-product {
+    background-color: #333333;
+    display: block;
+    color: #fff;
+}
+
+    .brand .title {
+        margin: 20px 0;
+        font-size: 12px;
+        color: #fff;
+    }
+
+    .brand .logo {
+        margin-bottom: 15px;
+    }
+
+    .brand .description {
+        font-size: 14px;
+        line-height: 1.5em;
+        text-align: left;
+    }
+
+    .brand .show {
+        font-family: Oswald, Impact, Haettenschweiler, "Franklin Gothic Bold", Charcoal, "Helvetica Inserat", "Bitstream Vera Sans Bold", "Arial Black", sans-serif;
+        font-size: 12px;
+        text-transform: uppercase;
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+    }
+
+.badge {
+    padding: 2px 15px;
+    border-radius: 1em;
+    color: #8f8f8f;
+}
+
+.badge.blue {
+    background-color: #0089cf;
+    color: #fff;
+}
+
+.badge.green {
+    background-color: #83d78c;
+    color: #fff;
+}
