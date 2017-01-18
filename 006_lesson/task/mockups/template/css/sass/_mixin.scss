@@ -1,0 +1,12 @@
+@mixin box-shadow ($shadow) {
+    -webkit-box-shadow: $shadow !important;
+       -moz-box-shadow: $shadow !important;
+            box-shadow: $shadow !important;
+}
+
+@mixin btn-hover-transition ($value) {
+    -webkit-transition: $value;
+       -moz-transition: $value;
+        -ms-transition: $value;
+            transition: $value;
+}
