@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Горизонтальное и вертикальное выравнивание</title>
+    <meta charset="utf-8">
+    <style>
+        .modal-wrapper {
+            box-sizing: border-box;
+            width: 100%;
+            height: 400px;
+            border: 1px solid #cccccc;
+        }
+        .modal-cell {
+            padding: 10px;
+            background: #eeeeee;
+        }
+        .modal-wrapper h1 {
+            margin-top: 0;
+            font-size: 1.5em;
+        }
+        .modal-content {
+            display: inline-block;
+            padding: 20px;
+            width: 250px;
+            border: 1px solid #cccccc;
+            border-radius: 3px;
+            background: #ffffff;
+            text-align: left;
+        }
+        .modal-wrapper input {
+            box-sizing: border-box;
+            padding: 8px 5px;
+            width: 100%;
+            border: 1px solid #e6e6e6;
+            border-radius: 3px;
+        }
+        .modal-wrapper input,
+        .modal-wrapper button {
+            margin: 10px 0;
+            font-size: 14px;
+        }
+
+        /* important */
+        .modal-wrapper {
+            display: table;
+        }
+
+        .modal-cell {
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+<div class="modal-wrapper">
+    <div class="modal-cell">
+        <div class="modal-content">
+            <h1>Форма входа</h1>
+            <input type="text" placeholder="Логин">
+            <input type="password" placeholder="Пароль">
+            <button type="submit">Отправить</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
