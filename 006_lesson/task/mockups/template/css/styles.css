@@ -128,9 +128,14 @@ a:hover {
 
 /*** Header ***/
 .header {
-  text-transform: uppercase;
+  position: fixed;
+  width: 100%;
+  height: 70px;
   font-weight: bold;
-  color: #82868f; }
+  color: #82868f;
+  background-color: #fff;
+  text-transform: uppercase;
+  z-index: 1; }
   .header .brand-logo {
     font-size: 30px;
     display: inline; }
@@ -151,13 +156,24 @@ a:hover {
   margin: 12px 0; }
   .navbar .links li a {
     padding: 12px 0;
-    border-radius: 20px;
-    padding-left: 38px;
-    padding-right: 38px;
     color: #82868f; }
     .navbar .links li a:hover {
       text-decoration: none; }
-  .navbar .links li.active a, .navbar .links li:hover a {
+  .navbar .links li:not(.sign-in) {
+    margin: 0 12px; }
+    .navbar .links li:not(.sign-in) a {
+      border-bottom: 4px solid transparent; }
+      .navbar .links li:not(.sign-in) a:hover {
+        border-bottom-color: #0ebfdd;
+        -webkit-transition: ease 0.5s;
+        -moz-transition: ease 0.5s;
+        -ms-transition: ease 0.5s;
+        transition: ease 0.5s; }
+  .navbar .links li.sign-in a {
+    padding-left: 38px;
+    padding-right: 38px;
+    border-radius: 20px; }
+  .navbar .links li.sign-in.active a, .navbar .links li.sign-in:hover a {
     background-color: #0ebfdd;
     color: #fff;
     border-radius: 20px;
@@ -316,28 +332,30 @@ a:hover {
   clear: both; }
 
 .google-tooltip {
-  color: #82868f;
-  left: 653px !important; }
+  color: #82868f; }
   .google-tooltip * {
     -webkit-box-shadow: none !important;
     -moz-box-shadow: none !important;
     box-shadow: none !important; }
-  .google-tooltip .tooltip-content table th, .google-tooltip .tooltip-content table td {
-    text-align: left;
-    font-weight: bold;
-    line-height: 1.3em; }
-  .google-tooltip .tooltip-content table th {
-    color: #fff; }
+  .google-tooltip .tooltip-content {
+    left: 65px !important; }
+    .google-tooltip .tooltip-content table th, .google-tooltip .tooltip-content table td {
+      text-align: left;
+      font-weight: bold;
+      line-height: 1.3em; }
+    .google-tooltip .tooltip-content table th {
+      color: #fff; }
   .google-tooltip .tooltip-wrap .tooltip-arrow {
     border-top-width: 7px !important;
     border-left-width: 7px !important;
     border-right-width: 7px !important;
-    border-top-color: #45494d !important;
-    left: 15px !important; }
+    border-top-color: #45494d !important; }
   .google-tooltip .tooltip-wrap .tooltip-outer-border {
-    background-color: #45494d !important; }
+    background-color: #45494d !important;
+    left: 50px !important; }
   .google-tooltip .tooltip-wrap .tooltip-bg {
-    background-color: #45494d !important; }
+    background-color: #45494d !important;
+    left: 50px !important; }
   .google-tooltip .tooltip-wrap .tooltip-arrow-hidden {
     display: none !important; }
   .google-tooltip .tooltip-close {
